@@ -1,0 +1,132 @@
+
+Schedule:
+9:45-10:15 ALL: Understanding the problem and drafting a main loop. Identifying key functions.
+10:15-10:45 ALL: Modelling the data. Sharing the same names and structures with the team will
+                provide a base code to start working in parallel. In our case, this task should
+                include writing Java Beans using Lists and Maps.
+10:45-11:25 Isaac: Building the I/O. Converting the input files to Beans and converting the
+                Beans to output files ensuring that works fine with the datasets will save you a lot of time later.
+10:45-11:25 Shravan: Building the main loop. Including generic “returns” for the key functions and checking
+                the code with every dataset to produce trivial results.
+10:45-11:25 Amit & Dominick: Building the key functions, mixing all the input data together to produce high scoring
+                alternatives. Design several strategies based in different criteria.
+
+11:25-11:45 ALL: Putting it all together. First executions can be run in order to get some feedback.
+
+11:45-1:30 ALL: Interpreting datasets is relevant for the algorithm, as they describe different conditions
+                        to be taken in core.
+12:00-Rest of the time ALL: Adjusting the code for every dataset, dividing existing datasets into Team Members.
+
+
+
+
+
+ToDo:
+- 
+-
+
+
+
+Sorting Projects:
+- naive: sort by deadline (asc), then sort by scores/# days (desc), then sort by scores/# contributors (desc)
+- level 1: 
+  - calculate a weight based on naive considerations (deadline, scores/# days, scores/# contributors)
+
+
+Match Contributors:
+- naive: find someone with the same skill or minimally higher
+- level 1:
+  - for projects with multiple of the same roles: 
+  - for contributors getting upgraded
+
+
+Main loop:
+- loop over "number of days"
+- have a priority queue for sorting projects
+
+day = 0
+day_to_newly_available_contributors = {0: [contr1 that will be avail day 0, contr2 that will be avail day 0, ..., contr_n that will be avail day 0] 
+                                       1: [contr1 that will be avail day 0, contr2 that will be avail day 0, ..., contr_n that will be avail day 1] 
+                                       2: [contr1 that will be avail day 0, contr2 that will be avail day 0, ..., contr_n that will be avail day 2],
+                                       ... 
+                                       m: [contr1 that will be avail day m, contr2 that will be avail day m, ..., contr_n that will be avail day m],
+                                       }
+
+FINAL
+
+class Solution:
+  def match_contributor(skill):
+  - get list of available contributors
+  - sort list of contributors by skill.level of skill.type
+  - binary search for closest skill level >= skill.level 
+  - return contributor
+
+  def find_next_valid_project():
+  - while next project is available:
+    - project = pop()
+    - project_contributors
+    - for skills in project:
+      - for skill in skills
+        - contributor = match_contributor(skill)
+        - add contributor to project
+
+projects: PriorityQueue = []
+projects_backlog = []
+while True:
+  update_current_projects()
+
+  if no contributors available: 
+    day += 1
+    continue
+  if there are no projects left:
+      break # simulation over
+
+  next_project = find_next_valid_project()
+
+  if next_project is null and all contributors are free:
+    break
+  
+  next_project = pop(projects)
+  if is_invalid(next_project):
+    continue
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Main loop Alt:
+- sort projects by ranking
+
+cur_day = 0
+day_of_earliest_completed_project = 0
+available_contributors (set) = [contributor object]
+while there is a valid projects:
+  top_project = project_queue.pop()
+  if (availalbe_contributors != num_contributors_needed_for_top_project()):
+    date = find_next_available_date()
+    cur_day = date
+    # logic to update next available date
+    
+    add now-available contributors 
+    the projection comp
+  
+  # assign contributors
+  # update day_of_earliest_completed_project
+  # update afffected values as if the project was completed (learning)
+

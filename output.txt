@@ -1,0 +1,14 @@
+3
+WebServer
+Bob Anna
+Logging
+Anna
+WebChat
+Maria Bob
+three projects are planned
+assignments for project WebServer
+Bob → first role, Anna → second role
+assignments for project Logging
+Anna → first role
+assignments for project WebChat
+Maria → first role, Bob → second role

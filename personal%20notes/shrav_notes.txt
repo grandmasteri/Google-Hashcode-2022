@@ -1,0 +1,13 @@
+Projects:
+- name
+- duration
+- score
+- deadline
+- roles
+- pts_earned_per_day_per_contr and all those combos...
+
+Contributors:
+- name
+- skills: Skill[]
+
+-
